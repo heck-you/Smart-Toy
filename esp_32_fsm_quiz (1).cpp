@@ -33,12 +33,12 @@ enum State {
   STATE_DISPLAY_SCORE,
   STATE_GAME_OVER
 };
-State gameState = STATE_CALIBRATION;
+State gameState = STATE_CALIBRATION;//intial state 
 
 // --- Quiz Parameters ---
 const int MAX_PLAYERS = 4;
 const int Q_PER_PLAYER = 10;
-int numPlayers = 2;
+int numPlayers = 1;
 int scores[MAX_PLAYERS];
 int questionCount[MAX_PLAYERS];
 int currentPlayer = 0;
@@ -101,8 +101,7 @@ void handleWaitForPen() {
   if (lastPolar[0] <= 0.001f) {
     return;
   }
-
-  // Valid coordinate received → move to matching state
+// Valid coordinate received → move to matching state
   gameState = STATE_MATCH_ANSWER;
 }
 
